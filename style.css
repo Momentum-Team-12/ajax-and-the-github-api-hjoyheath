@@ -1,3 +1,7 @@
 .name {
     border: 10px solid blueviolet;
 }
+
+img {
+    border-radius: 50%;
+}
