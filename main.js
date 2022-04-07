@@ -27,11 +27,11 @@ fetch("https://api.github.com/users/hjoyheath", {
     profileDiv.appendChild(locationDiv);
     // gitHub url
     let gitDiv = document.createElement("div");
-    gitDiv.innerHTML = `<a href="${data.html_url}">${data.login}</a>`;
+    gitDiv.innerHTML = `Find me on GitHub: <a href="${data.html_url}">${data.login}</a>`;
     profileDiv.appendChild(gitDiv);
     // username
     let usernameDiv = document.createElement("div");
-    usernameDiv.innerText = `GitHub Username: ${data.login}`;
+    usernameDiv.innerText = `Username: ${data.login}`;
     profileDiv.appendChild(usernameDiv);
   });
 

@@ -1,7 +1,27 @@
+body {
+    background-color: rgb(132, 97, 80);
+    font-family: sans-serif;
+}
+
+h2{
+    font-family: sans-serif;
+}
+
 .name {
     border: 10px solid blueviolet;
+    font-family: "Lato", sans-serif;
+    font-size: 50px;
 }
 
 img {
     border-radius: 50%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+div{
+    padding: 10px;
+    font-size:larger;
 }
