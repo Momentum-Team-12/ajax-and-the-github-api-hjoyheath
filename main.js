@@ -12,6 +12,7 @@ fetch("https://api.github.com/users/hjoyheath", {
   })
   //   avatar
   .then(function (data) {
+    console.log(data);
     let imageEl = document.createElement("img");
     imageEl.src = data.avatar_url;
     profileDiv.appendChild(imageEl);
@@ -26,7 +27,7 @@ fetch("https://api.github.com/users/hjoyheath", {
     profileDiv.appendChild(locationDiv);
     // gitHub url
     let gitDiv = document.createElement("div");
-    gitDiv.innerText = '<a href ="' + "GitHub URL:" + data.html_url + "</a>";
+    gitDiv.innerHTML = `<a href="${data.html_url}">${data.login}</a>`;
     profileDiv.appendChild(gitDiv);
     // username
     let usernameDiv = document.createElement("div");
