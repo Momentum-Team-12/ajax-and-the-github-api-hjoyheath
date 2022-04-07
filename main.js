@@ -16,6 +16,7 @@ fetch("https://api.github.com/users/hjoyheath", {
     let imageEl = document.createElement("img");
     imageEl.src = data.avatar_url;
     profileDiv.appendChild(imageEl);
+    imageEl.classList.add("img");
     // name
     let nameDiv = document.createElement("p");
     nameDiv.classList.add("name");
@@ -25,10 +26,12 @@ fetch("https://api.github.com/users/hjoyheath", {
     let locationDiv = document.createElement("div");
     locationDiv.innerText = `Location: ${data.location}`;
     profileDiv.appendChild(locationDiv);
+
     // gitHub url
-    let gitDiv = document.createElement("div");
-    gitDiv.innerHTML = `Find me on GitHub: <a href="${data.html_url}">${data.login}</a>`;
-    profileDiv.appendChild(gitDiv);
+    let urlDiv = document.createElement("a");
+    urlDiv.href = `${data.html_url}`;
+    urlDiv.innerText = `${data.login}`;
+    profileDiv.appendChild(urlDiv);
     // username
     let usernameDiv = document.createElement("div");
     usernameDiv.innerText = `Username: ${data.login}`;
@@ -47,7 +50,7 @@ fetch("https://api.github.com/users/hjoyheath/repos", {
   .then(function (data) {
     for (let i of data) {
       let repoDiv = document.createElement("div");
-      repoDiv.innerHTML = '<a href="' + i.html_url + '">' + i.name + "</a>";
+      repoDiv.innerHTML = `<a href="${i.html_url}">'${i.name}</a>`;
       profileDiv.appendChild(repoDiv);
     }
   });
